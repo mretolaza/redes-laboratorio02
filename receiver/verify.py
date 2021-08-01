@@ -2,11 +2,13 @@
 
 class Verify():
   def __init__(self):
-    self.msg_received =""
-    pass
+    self.msg_bit = ""
+    self.msg_original = ""
+    
 
-  def recibir_cadena_segura():
-    pass
+  def recibir_cadena_segura(self, msg_bit, msg_original):
+    self.msg_bit = msg_bit
+    self.msg_original = msg_original
 
   def correction():
     #TODO implementar algoritmo de correccion

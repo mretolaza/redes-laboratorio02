@@ -3,10 +3,11 @@
 class Transmission():
   def __init__(self):
     self.original_msg = ""
-    self.recibed_msg = ""
+    self.bit_msg = ""
     pass
 
   def recibir_objeto(self, msg):
-    #TODO: funcion para enviar el mensaje 
-    self.original_msg, self.recibed_msg = msg
-    pass
+    message =  modifiedMessage.split('|')
+    #message_bit, message_original = message
+    self.bit_msg, self.original_msg = message
+    

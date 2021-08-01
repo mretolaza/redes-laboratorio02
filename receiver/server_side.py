@@ -1,5 +1,4 @@
 from socket import *
-from sys import tracebacklimit
 from transmission import Transmission
 from verify import Verify
 from app import App
@@ -17,16 +16,14 @@ app = App()
 while True: 
   message, clientAddres = serverSocket.recvfrom(2048)
   modifiedMessage = message.decode().upper()
-  print(modifiedMessage)
-  serverSocket.sendto(modifiedMessage.encode(), clientAddres)
+  
   #transmision layer
-  # tran.recibir_objeto(message)
+  tran.recibir_objeto(message)
 
-  # #verify layer
-  # ver.recibir_cadena_segura(tran.recibed_msg)
+  #verify layer
+  ver.recibir_cadena_segura(tran.bit_msg, tran.original_msg)
 
   # #app layer  
   # app.recibir_cadena(ver.msg_received)
   
-
-
+  serverSocket.sendto(modifiedMessage.encode(), clientAddres)
