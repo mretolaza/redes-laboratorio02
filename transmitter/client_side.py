@@ -19,4 +19,4 @@ noi.agregar_ruido(ver.bit_msg)
 
 # Transmission layer
 tran = Transmission()
-tran.enviar_objeto(app.msg, noi.msgnoi)
+tran.enviar_objeto(app.msg, noi.noise_msg)
