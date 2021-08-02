@@ -14,3 +14,4 @@ class Transmission():
     clientSocket.sendto(obj.encode(), (self.serverIP, self.serverPort))
     print("-----------------------------Enviado")
     
+  
