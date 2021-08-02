@@ -4,7 +4,6 @@ class Transmission():
   def __init__(self):
     self.serverIP = '192.168.0.7'
     self.serverPort = 4308
-    pass  
   
   def enviar_objeto(self, original_msg, noise_msg):
     #Se concatena el mensaje original para la comparación

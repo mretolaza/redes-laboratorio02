@@ -4,7 +4,6 @@ class Transmission():
   def __init__(self):
     self.original_msg = ""
     self.bit_msg = ""
-    pass
 
   def recibir_objeto(self, msg):
     message =  msg.split('|')
