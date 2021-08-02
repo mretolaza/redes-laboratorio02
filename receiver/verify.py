@@ -10,9 +10,8 @@ class Verify():
     self.msg_original = msg_original
 
     #validación del mensaje con CRC32
-    crc32 = msg_bit[len(msg_bit)-3:]
-    res = self.check_CRC32(msg_bit, crc32)
-
+    res = self.check_CRC32(msg_bit)
+    print(res)
     if res == '000':
       print('mensaje verificado!')
     else:
@@ -46,8 +45,8 @@ class Verify():
 
     return r
 
-  def check_CRC32(self, ba, r):
-    dr = ba + r
+  def check_CRC32(self, ba):
+    dr = ba
     g = '1001'
     xg = dr[:4]
     
