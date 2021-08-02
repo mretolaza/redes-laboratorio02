@@ -7,6 +7,6 @@ class Verify():
   def enviar_cadena_segura(self, msg):
     ba = bitarray()
     ba.frombytes(msg.encode('utf-8'))
-    self.bit_msg = str(ba)
+    self.bit_msg = str(ba.to01())
    
     
