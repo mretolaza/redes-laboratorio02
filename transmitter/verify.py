@@ -1,4 +1,4 @@
-#from bitarray import bitarray
+from bitarray import bitarray
 
 class Verify():
   def __init__(self):
@@ -6,6 +6,8 @@ class Verify():
       pass
 
   def enviar_cadena_segura(self, msg):
-    #self.bit_msg = bitarray(msg)
-    self.bit_msg = '101110010111'
+    ba = bitarray()
+    ba.frombytes(msg.encode('utf-8'))
+    self.bit_msg = str(ba)
+   
     

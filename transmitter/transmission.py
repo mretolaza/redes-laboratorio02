@@ -10,6 +10,7 @@ class Transmission():
     #Se concatena el mensaje original para la comparación
     obj = original_msg + '|' + noise_msg
     print("Enviando-----------------------------")
+    print (obj)
     clientSocket = socket(AF_INET, SOCK_DGRAM)
     clientSocket.sendto(obj.encode(), (self.serverIP, self.serverPort))
     print("-----------------------------Enviado")
