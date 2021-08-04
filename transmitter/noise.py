@@ -7,9 +7,8 @@ class Noise():
     self.algoritmo= "CRC32"
       
   def agregar_ruido(self, msg):
-    err = int(len(msg) * 0.01)
-    
     if self.algoritmo == "CRC32":
+      err = int(len(msg) * 0.01)
       print('original', msg)
       crc32 = self.gen_CRC32(msg)
       print('crc32', crc32)
@@ -22,13 +21,9 @@ class Noise():
         print('Ruido en:','pos', pos,'value', value)    
 
       self.noise_msg = msg + crc32
-    else: 
-      #hacer lo de hamming
-      #otras funciones para hamming
-      
-      self.noise_msg = msg
-
-    
+    else:
+      #haming
+      pass
 
   def xor(self, a, b):
     if a == b:
