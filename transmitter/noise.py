@@ -26,12 +26,6 @@ class Noise():
       self.noise_msg = msg + crc32
     else:
       #haming
-      for x in range(err):
-        pos = random.randint(0,99)
-        value = str(random.randint(0,1))
-        msg = msg[:pos] + str(value) + msg[pos + 1:]
-
-        print('Ruido en:','pos', pos,'value', value)
 
       m = len(msg)
       r = hc.calcRedundantBits(m)
@@ -41,6 +35,13 @@ class Noise():
       
       # Determine the parity bits
       arr = hc.calcParityBits(arr, r)
+
+      for x in range(err):
+        pos = random.randint(0,99)
+        value = str(random.randint(0,1))
+        arr = arr[:pos] + str(value) + arr[pos + 1:]
+
+        print('Ruido en:','pos', pos,'value', value)
       
       self.noise_msg = arr 
       self.r= r
