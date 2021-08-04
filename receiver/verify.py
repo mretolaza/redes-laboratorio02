@@ -24,7 +24,7 @@ class Verify():
     else: 
       self.msg_bit = msg_bit
       #hamming
-      correction = hs.detectError(msg_bit, msg_original)
+      correction = hs.detectError(msg_bit, str(msg_original))
       print("The position of error is " + str(correction))
 
 
