@@ -1,4 +1,4 @@
-
+import hammingServer as hs
 
 class Verify():
   def __init__(self):
@@ -22,8 +22,10 @@ class Verify():
       #se remueve el crc del mensaje
       self.msg_bit = msg_bit[:-3]
     else: 
-      self.msg_bit = msg_bit[:-3]
+      self.msg_bit = msg_bit
       #hamming
+      correction = hs.detectError(msg_bit, msg_original)
+      print("The position of error is " + str(correction))
 
 
   

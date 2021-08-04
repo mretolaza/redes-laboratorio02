@@ -1,14 +1,17 @@
 import random
+import hammingClient as hc
 
 class Noise():
   def __init__(self):
     self.noise_msg =""
     self.prob = 0.01
-    self.algoritmo= "CRC32"
+    self.algoritmo= "HAM"
+    self.r = ""
       
   def agregar_ruido(self, msg):
+    err = int(len(msg) * 0.01)
+
     if self.algoritmo == "CRC32":
-      err = int(len(msg) * 0.01)
       print('original', msg)
       crc32 = self.gen_CRC32(msg)
       print('crc32', crc32)
@@ -23,7 +26,24 @@ class Noise():
       self.noise_msg = msg + crc32
     else:
       #haming
-      pass
+      for x in range(err):
+        pos = random.randint(0,99)
+        value = str(random.randint(0,1))
+        msg = msg[:pos] + str(value) + msg[pos + 1:]
+
+        print('Ruido en:','pos', pos,'value', value)
+
+      m = len(msg)
+      r = hc.calcRedundantBits(m)
+      
+      # Determine the positions of Redundant Bits
+      arr = hc.posRedundantBits(msg, r)
+      
+      # Determine the parity bits
+      arr = hc.calcParityBits(arr, r)
+      
+      self.noise_msg = arr 
+      self.r= r
 
   def xor(self, a, b):
     if a == b:
