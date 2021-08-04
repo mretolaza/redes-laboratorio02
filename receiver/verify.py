@@ -10,7 +10,7 @@ class Verify():
   def recibir_cadena_segura(self, msg_bit, msg_original):
     self.msg_original = msg_original
 
-    if self.algoritmo = "CRC32":
+    if self.algoritmo == "CRC32":
       #validación del mensaje con CRC32
       res = self.check_CRC32(msg_bit)
       print(res)
