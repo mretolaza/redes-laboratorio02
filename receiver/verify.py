@@ -4,26 +4,29 @@ class Verify():
   def __init__(self):
     self.msg_bit = ""
     self.msg_original = ""
+    self.algoritmo = "CRC32"
     
 
   def recibir_cadena_segura(self, msg_bit, msg_original):
     self.msg_original = msg_original
 
-    #validación del mensaje con CRC32
-    res = self.check_CRC32(msg_bit)
-    print(res)
-    if res == '000':
-      print('mensaje verificado!')
-    else:
-      print('mensaje no verificado, hay ruido')
+    if self.algoritmo = "CRC32":
+      #validación del mensaje con CRC32
+      res = self.check_CRC32(msg_bit)
+      print(res)
+      if res == '000':
+        print('mensaje verificado!')
+      else:
+        print('mensaje no verificado, hay ruido')
 
-    #se remueve el crc del mensaje
-    self.msg_bit = msg_bit[:-3]
+      #se remueve el crc del mensaje
+      self.msg_bit = msg_bit[:-3]
+    else: 
+      self.msg_bit = msg_bit[:-3]
+      #hamming
 
 
-  def correction():
-    #TODO implementar algoritmo de correccion
-    pass
+  
 
   def xor(self, a, b):
     if a == b:
