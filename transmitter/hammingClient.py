@@ -2,7 +2,6 @@
 # Python program to dmeonstrate 
 # hamming code 
 
-
 def calcRedundantBits(m): 
 
     # Use the formula 2 ^ r >= m + r + 1 
@@ -59,23 +58,3 @@ def calcParityBits(arr, r):
         # (0 to n - 2^r) + parity bit + (n - 2^r + 1 to n) 
         arr = arr[:n-(2**i)] + str(val) + arr[n-(2**i)+1:] 
     return arr 
-
-
-def detectError(arr, nr): 
-    n = len(arr) 
-    res = 0
-
-    # Calculate parity bits again 
-    for i in range(nr): 
-        val = 0
-        for j in range(1, n + 1): 
-            if(j & (2**i) == (2**i)): 
-                val = val ^ int(arr[-1 * j]) 
-
-        # Create a binary no by appending 
-        # parity bits together. 
-
-        res = res + val*(10**i) 
-
-    # Convert binary to decimal 
-    return int(str(res), 2) 
