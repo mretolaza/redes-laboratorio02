@@ -11,16 +11,18 @@ Debido a esto, es importante que, como programadores, comprendamos en que moment
 Durante la práctica de laboratorio se elabora un modelo básico de implementación del intercambio de mensajes entre un cliente y un servidor. Para poder elaborar el modelo debemos de conocer la arquitectura que debemos de implementar. Dicha arquitectura es el modelo de 4 Capas propuesto en la práctica de laboratorio. 
 Dicho modelo de capas consiste en lo siguiente: 
 •	Emisor 
-  o	Aplicación 
-  o	Verificación 
-  o	Ruido 
-  o	Transferencia 
+  o (1)	Aplicación 
+  o	(2) Verificación 
+  o	(3) Ruido 
+  o	(4) Transferencia 
 
 •	Receptor 
- o	Transmisión 
- o	Codificación 
- o	Verificación 
- o	Aplicación 
+ o	(4) Transmisión 
+ o	(3) Codificación 
+ o	(2) Verificación 
+ o	(1) Aplicación 
+ 
+ 
 Al implementar nuestro algoritmo debemos de cumplir con los siguientes objetivos: 
 
 •	Identificar ventajas y desventajas de implementación para la detección y corrección de errores 
