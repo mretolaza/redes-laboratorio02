@@ -1,13 +1,18 @@
 import hammingServer as hs
+import bitarray as bitarray
+import time
 
 class Verify():
-  def __init__(self):
+  def __init__(self, algoritmo):
     self.msg_bit = ""
     self.msg_original = ""
-    self.algoritmo = "CRC32"
+    self.algoritmo = algoritmo #"CRC32"
+    self.msg_rec = ""
     
 
   def recibir_cadena_segura(self, msg_bit, msg_original):
+    start = time.time()
+
     self.msg_original = msg_original
 
     if self.algoritmo == "CRC32":
@@ -25,8 +30,16 @@ class Verify():
       self.msg_bit = msg_bit
       #hamming
       correction = hs.detectError(msg_bit, int(msg_original))
-      print("The position of error is " + str(correction))
+      if correction > 0:
+        print("La posición del error es:" + str(correction))
+      else: 
+        print("Mensaje correcto")
+        
+    self.msg_rec = bitarray(bitarray(msg_bit).tolist()).tobytes().decode('utf-8')
 
+    end = time.time()
+
+    print(f"Runtime of the program is {end - start}")
 
   
 
