@@ -2,10 +2,10 @@ import random
 import hammingClient as hc
 
 class Noise():
-  def __init__(self):
+  def __init__(self, algoritmo, probabilidad):
     self.noise_msg =""
-    self.prob = 0.01
-    self.algoritmo= "HAM"
+    self.prob = probabilidad
+    self.algoritmo= algoritmo
     self.r = ""
       
   def agregar_ruido(self, msg):

@@ -12,7 +12,7 @@ app = App()
 ver = Verify()
 
 # Noise layer
-noi = Noise()
+noi = Noise("CRC32",0.02)
 
 # Transmission layer
 tran = Transmission()
