@@ -10,7 +10,7 @@ serverSocket.bind(('',serverPort))
 print("Listen...")
 
 tran = Transmission()
-ver = Verify("HAM") # "HAM" para el algoritmo de hammilton, "CRC32" para el algoritmo CRC-32
+ver = Verify("CRC32") # "HAM" para el algoritmo de hammilton, "CRC32" para el algoritmo CRC-32
 app = App()
 
 while True: 

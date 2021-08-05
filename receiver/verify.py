@@ -35,7 +35,7 @@ class Verify():
       else: 
         print("Mensaje correcto")
         
-    self.msg_rec = bitarray(bitarray(msg_bit).tolist()).tobytes().decode('utf-8')
+    #self.msg_rec = bitarray(bitarray(msg_bit).tolist()).tobytes().decode('utf-8')
 
     end = time.time()
 
